@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Application</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+      <div class="preloader">
+           <img src="/video/preloader/preloader.gif" alt="()">
+      </div>
+       <header>
+            <video controls autoplay loop muted class="video-container">
+                   <source src="/video/video.mp4/video.mp4"> 
+            </video>
+            <h1>Video Project</h1>
+            <button>
+                  <span>Play</span>
+                  <span>Pause</span>
+                  <span class="slider"></span>
+            </button>
+       </header>
+    <script>
+         console.log("Har Har mahadev");
+         const preloader = document.querySelector(".preloader");
+         console.log(preloader);
+         window.addEventListener("load", function() {
+               preloader.classList.add("hide-preloader");
+         });
+         const btn = document.querySelector("button");
+         console.log(btn);
+         const video = document.querySelector(".video-container");
+         console.log(video);
+         btn.addEventListener("click", function() {
+            //  if(!btn.classList.contains("change")){
+            //      btn.classList.add("change");
+            //      video.pause();
+            //  }
+            //  else{
+            //        btn.classList.remove("change");
+            //        video.play();
+            //  }
+            if(video.paused){
+                 video.play();
+                 btn.classList.remove("change");
+            }
+            else{
+                video.pause();
+                btn.classList.add("change");
+            }
+         })
+    </script>
+</body>
+</html>
